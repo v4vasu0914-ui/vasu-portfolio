@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VASU PAL — Graphic Designer</title>
+<style>
+:root{--bg:#0b0b0b;--fg:#f4f1eb;--muted:#999;--line:#292929;--accent:#d8ff3e}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif}
+.wrap{width:min(1180px,92%);margin:auto}a{color:inherit;text-decoration:none}
+header{position:fixed;z-index:10;top:0;left:0;right:0;background:#0b0b0bd9;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12}
+.nav{height:76px;display:flex;justify-content:space-between;align-items:center}.logo{font-weight:900;font-size:25px;letter-spacing:-.06em}.logo span{color:var(--accent)}nav{display:flex;gap:28px;font-size:13px;color:#bbb}
+section{padding:115px 0;border-top:1px solid var(--line)}.hero{min-height:100vh;display:flex;align-items:center;padding-top:120px;border:0}
+.kicker{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:22px}
+h1{font-size:clamp(62px,10vw,140px);line-height:.82;letter-spacing:-.085em}h2{font-size:clamp(44px,7vw,82px);line-height:.9;letter-spacing:-.07em}
+.hero p{max-width:650px;color:var(--muted);font-size:18px;line-height:1.5;margin:32px 0}
+.meta{display:flex;gap:30px;color:#777;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-top:70px;flex-wrap:wrap}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:45px}.count{color:#666;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{min-height:520px;border:1px solid #242424;background:#151515;position:relative;overflow:hidden;transition:.35s}.project:hover{transform:translateY(-5px);border-color:#444}
+.project-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.6s}.project:hover .project-image{transform:scale(1.025)}
+.project-info{position:absolute;bottom:0;left:0;width:100%;padding:90px 25px 25px;display:flex;justify-content:space-between;align-items:end;background:linear-gradient(transparent,#000e)}
+.project-info h3{font-size:21px}.project-info small{color:#ccc;display:block;margin-top:5px}
+.case{margin-top:95px}.case-title{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;margin-bottom:55px}.case-title p{color:var(--muted);font-size:17px;line-height:1.55}
+.gallery-title{margin:70px 0 22px;font-size:13px;color:var(--accent);letter-spacing:.14em;text-transform:uppercase}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.gallery img{width:100%;display:block;border:1px solid #242424}.gallery .full{grid-column:1/-1}
+footer{border-top:1px solid var(--line);padding:25px 0;color:#666;font-size:11px}
+.reveal{opacity:0;transform:translateY(22px);transition:.8s}.show{opacity:1;transform:none}
+@media(max-width:760px){nav{display:none}.grid,.case-title,.gallery{grid-template-columns:1fr}.gallery .full{grid-column:auto}.section-head{display:block}.count{margin-top:12px}.project{min-height:450px}}
+
+.name-lockup{display:flex;flex-direction:column;gap:6px;margin-bottom:34px}
+.name-lockup .name{font-size:clamp(58px,9vw,126px);font-weight:900;line-height:.8;letter-spacing:-.085em}
+.name-lockup .role{font-size:14px;color:var(--accent);font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.contact-row{display:flex;gap:18px;flex-wrap:wrap;color:#aaa;font-size:13px;margin-top:24px}
+.contact-row a{border-bottom:1px solid #555;padding-bottom:3px}
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:70px;align-items:start}
+.about-copy{color:var(--muted);font-size:17px;line-height:1.6;max-width:680px}
+.info-list{display:grid;gap:14px}
+.info-card{border-top:1px solid var(--line);padding:18px 0}
+.info-card .label{font-size:10px;color:#666;letter-spacing:.14em;text-transform:uppercase;margin-bottom:7px}
+.info-card .value{font-size:15px;color:#ddd;line-height:1.45}
+.resume-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.resume-block{border-top:1px solid var(--line);padding-top:20px}
+.resume-block h3{font-size:24px;margin-bottom:24px}
+.timeline{display:grid;gap:26px}
+.job{border-left:2px solid #303030;padding-left:20px}
+.job .job-title{font-size:17px;font-weight:700}
+.job .job-meta{font-size:11px;color:#777;text-transform:uppercase;letter-spacing:.08em;margin:7px 0 12px}
+.job ul{padding-left:17px;color:#999;font-size:13px;line-height:1.55}
+.tool-list{display:flex;gap:9px;flex-wrap:wrap}
+.tool{border:1px solid #292929;padding:10px 12px;color:#bbb;font-size:12px}
+@media(max-width:760px){.about-grid,.resume-grid{grid-template-columns:1fr;gap:35px}}
+
+.brand-section{padding:35px 0 10px;border-top:1px solid var(--line)}
+.brand-note{max-width:720px;color:var(--muted);font-size:15px;line-height:1.6;margin-top:-20px;margin-bottom:35px}
+.kiddo-intro{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:end;margin-bottom:50px}
+.kiddo-intro p{color:var(--muted);font-size:17px;line-height:1.55}
+.format-title{font-size:12px;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;margin:55px 0 18px}
+.kiddo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.kiddo-grid img{width:100%;display:block;border:1px solid #242424;background:#151515}
+.kiddo-grid .wide{grid-column:1/-1}
+.kiddo-grid .portrait{max-height:900px;object-fit:contain}
+.achievement-intro{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;align-items:end;margin-bottom:55px}.achievement-intro h3{font-size:clamp(30px,4vw,52px);line-height:.95;letter-spacing:-.05em}.achievement-intro p{color:var(--muted);font-size:17px;line-height:1.6}.achievement-intro strong{color:#ddd}.disha-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.disha-grid img{width:100%;display:block;border:1px solid #242424;background:#151515}.disha-grid.core{grid-template-columns:1fr 1fr}.disha-grid.core img:first-child{grid-column:1/-1}.disha-grid.metro img:first-child{grid-column:1/-1}.hotel-intro{display:grid;grid-template-columns:1fr 1.35fr;gap:60px;align-items:end;margin-bottom:55px}.hotel-intro h3{font-size:clamp(30px,4vw,52px);line-height:.95;letter-spacing:-.05em}.hotel-intro p{color:var(--muted);font-size:17px;line-height:1.6}.hotel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.hotel-grid img{width:100%;display:block;border:1px solid #242424;background:#151515}.hotel-grid img:first-child{grid-column:1/-1}.hotel-grid .jawai-first{grid-column:1/-1}.hotel-intro h3,.achievement-intro h3,.kiddo-intro h3,.case-title h2{font-size:clamp(28px,3.6vw,50px);line-height:1;letter-spacing:-.045em;text-transform:uppercase}
+@media(max-width:760px){.kiddo-intro,.achievement-intro,.hotel-intro{grid-template-columns:1fr;gap:20px}.kiddo-grid,.disha-grid,.hotel-grid{grid-template-columns:1fr}.kiddo-grid .wide{grid-column:auto}.disha-grid.core img:first-child,.disha-grid.metro img:first-child,.hotel-grid img:first-child,.hotel-grid .jawai-first{grid-column:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="logo" href="#top">VASU PAL<span>.</span></a><nav><a href="#about">About</a><a href="#experience">Experience</a><a href="#project">Work</a><a href="#hotel">Hotel Facesheet</a><a href="#achievement">DISHA IAF</a><a href="#kiddo">Kiddo</a></nav></div></header>
+
+<section id="top" class="hero"><div class="wrap reveal">
+<div class="name-lockup">
+  <div class="name">VASU PAL</div>
+  <div class="role">GRAPHIC DESIGNER</div>
+</div>
+<p>Graphic Designer with 2+ years of professional experience creating high-impact visual content across digital marketing, advertising, and institutional design. I work across branding, advertising, social media, print, and AI-assisted design and video.</p>
+<div class="contact-row">
+  <a href="mailto:vasupal014@gmail.com">vasupal014@gmail.com</a>
+  <span>Sec-22, Rohini, Delhi</span>
+  <span>+91 9773674120</span>
+</div>
+<div class="meta"><span>Adobe Creative Suite</span><span>AI-Assisted Design</span><span>Branding</span><span>Advertising</span><span>Motion</span><span>Achievement — DISHA IAF</span></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+<div class="section-head"><div><div class="kicker">About me</div><h2>WHAT I DO.</h2></div><div class="count">PROFILE</div></div>
+<div class="about-grid">
+  <div class="about-copy">I create visual content with a strong focus on brand consistency, audience engagement, and conversion-driven creative. My work covers the full design workflow — from concept development and execution to client presentation — while working closely with content and marketing teams.</div>
+  <div class="info-list">
+    <div class="info-card"><div class="label">Core strengths</div><div class="value">Brand consistency · Campaign design · Digital marketing creatives · Advertising · Social media · Print design · Client presentation</div></div>
+    <div class="info-card"><div class="label">Additional</div><div class="value">AI-assisted design and video · AI-generated reels and motion content · Mentoring and training junior team members</div></div>
+  </div>
+</div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<div class="section-head"><div><div class="kicker">Career</div><h2>EXPERIENCE.</h2></div><div class="count">2024 — PRESENT</div></div>
+<div class="resume-grid">
+  <div class="resume-block">
+    <div class="timeline">
+      <div class="job">
+        <div class="job-title">Graphic Designer — Global Media Marketing and Communication</div>
+        <div class="job-meta">May 2026 – Present</div>
+        <ul>
+          <li>Design creative assets and advertising campaigns for government ministries and institutional bodies including WDRA, BIRAC, and Disha AIF.</li>
+          <li>Develop campaign concepts supporting senior leadership during ministry pitches and strategic presentations.</li>
+          <li>Produce AI-generated video reels and motion content while maintaining creative quality.</li>
+          <li>Create targeted advertisements and social media reels for government initiatives and institutional audiences.</li>
+          <li>Work with content and marketing teams to maintain consistent messaging and visual identity.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-title">Graphic Designer — MiM-Essay</div>
+        <div class="job-meta">Jan 2025 – March 2026</div>
+        <ul>
+          <li>Designed Instagram carousels, feed posts, Reel covers, and Meta ad creatives.</li>
+          <li>Worked with content and marketing teams to maintain brand identity across digital platforms.</li>
+          <li>Used Adobe Creative Suite, Figma, and Canva for daily design work.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-title">Intern Graphic Designer — MiM-Essay</div>
+        <div class="job-meta">Oct 2024 – Dec 2024</div>
+        <ul>
+          <li>Supported senior designers with production tasks across multiple enterprise projects.</li>
+          <li>Built professional design and editing skills through self-directed learning.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="resume-block">
+    <h3>TOOLS & EDUCATION</h3>
+    <div class="tool-list">
+      <div class="tool">Adobe Photoshop</div><div class="tool">Illustrator</div><div class="tool">After Effects</div><div class="tool">Premiere Pro</div>
+      <div class="tool">ChatGPT</div><div class="tool">Google Gemini</div><div class="tool">Midjourney</div>
+      <div class="tool">Video Editing</div><div class="tool">Motion Graphics</div>
+    </div>
+    <div class="info-list" style="margin-top:30px">
+      <div class="info-card"><div class="label">Education</div><div class="value">Bachelors of Political Science Honours — Delhi University SOL<br>2024 – Present</div></div>
+      <div class="info-card"><div class="label">Contact</div><div class="value"><a href="mailto:vasupal014@gmail.com">vasupal014@gmail.com</a><br>Sec-22, Rohini, Delhi · +91 9773674120</div></div>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<section id="project"><div class="wrap">
+<div class="section-head"><div><div class="kicker">Selected Work</div><h2>THE WORK.</h2></div><div class="count">4 PROJECTS · MULTIPLE FORMATS</div></div>
+<div class="grid">
+  <article class="project reveal">
+    <img class="project-image" src="assets/alivaa/alivaa-1.jpg" alt="Alivaa Hotels hotel fact sheet design" loading="eager">
+    <div class="project-info"><div><h3>ALIVAA HOTELS — FACESHEET</h3><small>Hotel facesheet · Editorial design · Hospitality</small></div><span>01</span></div>
+  </article>
+  <article class="project reveal">
+    <img class="project-image" src="assets/disha/disha-campaign-01.jpg" alt="Indian Air Force DISHA Cell campaign" loading="lazy">
+    <div class="project-info"><div><h3>DISHA IAF — TENDER CAMPAIGN</h3><small>Indian Air Force · Campaign · OOH · AI-assisted visuals</small></div><span>02</span></div>
+  </article>
+  <article class="project reveal">
+    <img class="project-image" src="assets/kiddo/thumbnail-01.jpg" alt="Kiddo Meta Ads Campaign" loading="lazy">
+    <div class="project-info"><div><h3>KIDDO — META ADS</h3><small>Kids essentials campaign · Feed · Reels · Thumbnails</small></div><span>03</span></div>
+  </article>
+  <article class="project reveal">
+    <img class="project-image" src="assets/day-cream-artwork.jpg" alt="Everyday Skincare branding" loading="lazy">
+    <div class="project-info"><div><h3>EVERYDAY — BRAND SYSTEM</h3><small>Packaging · Social · Retail · OOH</small></div><span>04</span></div>
+  </article>
+</div>
+</div></section>
+
+<section id="hotel"><div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">Selected Work / 01</div><h2>ALIVAA.<br>HOTEL FACESHEET.</h2></div>
+    <div class="count">20 VISUAL PAGES · HOSPITALITY · EDITORIAL DESIGN</div>
+  </div>
+
+  <div class="hotel-intro">
+    <div>
+      <div class="kicker">Hospitality / Facesheet Design</div>
+      <h3>DESIGNING A VISUAL STORY FOR ALIVAA HOTELS.</h3>
+    </div>
+    <p>A multi-page hotel fact sheet designed for <strong style="color:#ddd">Alivaa Hotels</strong>, bringing together the heritage story, accommodation, dining, facilities, experiences and destination highlights of the properties. The work covers <strong style="color:#ddd">Heritage Lotwara Fort</strong> and <strong style="color:#ddd">Jawai Palash by Alivaa</strong>, using a refined editorial layout, strong typography, photography-led compositions and clear information hierarchy.</p>
+  </div>
+
+  <div class="format-title">01 — Heritage Lotwara Fort / Facesheet</div>
+  <div class="hotel-grid">
+    <img src="assets/alivaa/alivaa-1.jpg" alt="Alivaa Heritage Lotwara Fort fact sheet cover" loading="eager">
+    <img src="assets/alivaa/alivaa-2.jpg" alt="Alivaa Heritage Lotwara Fort history page" loading="lazy">
+    <img src="assets/alivaa/alivaa-3.jpg" alt="Alivaa Heritage Lotwara Fort about page" loading="lazy">
+    <img src="assets/alivaa/alivaa-4.jpg" alt="Alivaa Heritage Lotwara Fort accommodation page" loading="lazy">
+    <img src="assets/alivaa/alivaa-5.jpg" alt="Alivaa Heritage Lotwara Fort Queen's Room page" loading="lazy">
+    <img src="assets/alivaa/alivaa-6.jpg" alt="Alivaa Heritage Lotwara Fort Prince Room page" loading="lazy">
+    <img src="assets/alivaa/alivaa-7.jpg" alt="Alivaa Heritage Lotwara Fort Princess Room page" loading="lazy">
+    <img src="assets/alivaa/alivaa-8.jpg" alt="Alivaa Heritage Lotwara Fort dining experience page" loading="lazy">
+    <img src="assets/alivaa/alivaa-9.jpg" alt="Alivaa Heritage Lotwara Fort facilities page" loading="lazy">
+    <img src="assets/alivaa/alivaa-10.jpg" alt="Alivaa Heritage Lotwara Fort experiences page" loading="lazy">
+    <img src="assets/alivaa/alivaa-11.jpg" alt="Alivaa Heritage Lotwara Fort nearby experiences page" loading="lazy">
+    <img src="assets/alivaa/alivaa-12.jpg" alt="Alivaa Heritage Lotwara Fort closing page" loading="lazy">
+  </div>
+
+  <div class="format-title">02 — Jawai Palash by Alivaa / Facesheet</div>
+  <div class="hotel-grid">
+    <img class="jawai-first" src="assets/alivaa/jawai-1.jpg" alt="Jawai Palash by Alivaa about page" loading="lazy">
+    <img src="assets/alivaa/jawai-2.jpg" alt="Jawai Palash by Alivaa accommodation page" loading="lazy">
+    <img src="assets/alivaa/jawai-3.jpg" alt="Jawai Palash by Alivaa mud houses accommodation page" loading="lazy">
+    <img src="assets/alivaa/jawai-4.jpg" alt="Jawai Palash by Alivaa accommodation detail page" loading="lazy">
+    <img src="assets/alivaa/jawai-5.jpg" alt="Jawai Palash by Alivaa dining and facilities page" loading="lazy">
+    <img src="assets/alivaa/jawai-6.jpg" alt="Jawai Palash by Alivaa leisure and experiences page" loading="lazy">
+    <img src="assets/alivaa/jawai-7.jpg" alt="Jawai Palash by Alivaa experiences and destination page" loading="lazy">
+    <img src="assets/alivaa/jawai-8.jpg" alt="Jawai Palash by Alivaa closing and contact page" loading="lazy">
+  </div>
+</div></section>
+
+<section id="achievement"><div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">Achievement / Tender Presentation</div><h2>DISHA IAF.<br>CAMPAIGN.</h2></div>
+    <div class="count">12 VISUAL ASSETS · 3 CORE · 2 HOARDING · 2 LED · 5 METRO</div>
+  </div>
+
+  <div class="achievement-intro">
+    <div>
+      <div class="kicker">A Project That Won The Pitch</div>
+      <h3>DESIGN THAT HELPED SECURE THE TENDER.</h3>
+    </div>
+    <p>For my company's tender presentation for the <strong>Indian Air Force DISHA Cell</strong>, I developed the campaign's visual direction and key creative designs presented in the pitch. These designs were a key part of the presentation that helped the company secure the tender. AI was intentionally used for selected backgrounds and mockups because the presentation also evaluated our AI proficiency.</p>
+  </div>
+
+  <div class="format-title">01 — Core Campaign Creatives</div>
+  <div class="disha-grid core">
+    <img src="assets/disha/disha-campaign-01.jpg" alt="Indian Air Force DISHA Cell campaign creative" loading="eager" decoding="async">
+    <img src="assets/disha/disha-campaign-02.jpg" alt="Indian Air Force DISHA Cell campaign creative" loading="eager" decoding="async">
+    <img src="assets/disha/disha-campaign-03.jpg" alt="Indian Air Force DISHA Cell campaign creative" loading="eager" decoding="async">
+  </div>
+
+  <div class="format-title">02 — Hoarding / Outdoor Application</div>
+  <div class="disha-grid">
+    <img src="assets/disha/disha-hoarding.jpg" alt="DISHA Cell hoarding design" loading="eager" decoding="async">
+    <img src="assets/disha/disha-hoarding-mockup.jpg" alt="DISHA Cell hoarding mockup" loading="eager" decoding="async">
+  </div>
+
+  <div class="format-title">03 — LED / Digital Outdoor Application</div>
+  <div class="disha-grid">
+    <img src="assets/disha/disha-led.jpg" alt="DISHA Cell LED design" loading="eager" decoding="async">
+    <img src="assets/disha/disha-led-mockup.jpg" alt="DISHA Cell LED mockup" loading="eager" decoding="async">
+  </div>
+
+  <div class="format-title">04 — Metro Campaign Applications</div>
+  <div class="disha-grid metro">
+    <img src="assets/disha/disha-metro-design.png" alt="DISHA Cell metro campaign design" loading="eager" decoding="async">
+    <img src="assets/disha/disha-metro-01.jpg" alt="DISHA Cell metro campaign application" loading="eager" decoding="async">
+    <img src="assets/disha/disha-metro-inside.jpg" alt="DISHA Cell metro interior campaign mockup" loading="eager" decoding="async">
+    <img src="assets/disha/disha-metro-mockup.jpg" alt="DISHA Cell metro campaign mockup" loading="eager" decoding="async">
+    <img src="assets/disha/disha-metro-mockup-02.jpg" alt="DISHA Cell metro campaign mockup" loading="eager" decoding="async">
+  </div>
+</div></section>
+
+<section id="kiddo"><div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">Selected Work / 02</div><h2>KIDDO.<br>META ADS.</h2></div>
+    <div class="count">META ADS · 3 FORMATS · 9 CREATIVE ASSETS</div>
+  </div>
+
+  <div class="kiddo-intro">
+    <div>
+      <div class="kicker">Brand Campaign</div>
+      <h3 style="font-size:28px;line-height:1.05;margin-bottom:18px">Kiddo — kids essentials, delivered fast.</h3>
+      <a href="https://www.allforkiddo.com/" target="_blank" rel="noopener" style="display:inline-block;color:var(--accent);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--accent);padding-bottom:5px">Visit Kiddo Website ↗</a>
+    </div>
+    <p>Kiddo is a kids and baby essentials app serving Delhi NCR, bringing toys, diapers, baby care, clothing and other everyday kids' needs together with delivery in around 60 minutes. For this project, I created a Meta advertising campaign adapted across feed, Reel and thumbnail formats.</p>
+  </div>
+
+  <div class="format-title">01 — Meta Feed / 1080 × 1080</div>
+  <div class="kiddo-grid">
+    <img src="assets/kiddo/feed-01.jpg" alt="Kiddo Meta ad feed creative 1" loading="lazy">
+    <img src="assets/kiddo/feed-02.jpg" alt="Kiddo Meta ad feed creative 2" loading="lazy">
+    <img src="assets/kiddo/feed-03.jpg" alt="Kiddo Meta ad feed creative 3" loading="lazy">
+  </div>
+
+  <div class="format-title">02 — Reels / 1080 × 1920</div>
+  <div class="kiddo-grid">
+    <img class="portrait" src="assets/kiddo/reel-01.jpg" alt="Kiddo Meta Reel creative 1" loading="lazy">
+    <img class="portrait" src="assets/kiddo/reel-02.jpg" alt="Kiddo Meta Reel creative 2" loading="lazy">
+    <img class="portrait" src="assets/kiddo/reel-03.jpg" alt="Kiddo Meta Reel creative 3" loading="lazy">
+  </div>
+
+  <div class="format-title">03 — Meta Thumbnails / 1200 × 628</div>
+  <div class="kiddo-grid">
+    <img class="wide" src="assets/kiddo/thumbnail-01.jpg" alt="Kiddo Meta thumbnail 1" loading="lazy">
+    <img class="wide" src="assets/kiddo/thumbnail-02.jpg" alt="Kiddo Meta thumbnail 2" loading="lazy">
+    <img class="wide" src="assets/kiddo/thumbnail-03.jpg" alt="Kiddo Meta thumbnail 3" loading="lazy">
+  </div>
+</div></section>
+
+<section id="branding"><div class="wrap">
+<div class="brand-section">
+  <div class="section-head"><div><div class="kicker">Branding / Selected Work / 03</div><h2>EVERYDAY.</h2></div><div class="count">EVERYDAY SKINCARE</div></div>
+  <p class="brand-note">A complete visual branding system carried across packaging, social media, retail and OOH applications.</p>
+</div>
+
+<div class="case">
+<div class="case-title"><div><div class="kicker">Everyday Skincare / Brand System</div><h2>ONE BRAND.<br>MULTIPLE TOUCHPOINTS.</h2></div>
+<p>The campaign keeps the Everyday identity consistent while giving each skincare product its own colour language. The same system extends from pack design into social communication, retail displays and large-format outdoor advertising.</p></div>
+
+<div id="packaging" class="gallery-title">01 — Packaging / 3 Product Variants + Mockups</div>
+<div class="gallery"><img src="assets/day-cream-artwork.jpg" alt="Everyday Day Cream artwork" loading="lazy"><img src="assets/night-cream-artwork.jpg" alt="Everyday Night Cream artwork" loading="lazy"><img src="assets/sunscreen-artwork.jpg" alt="Everyday Sunscreen artwork" loading="lazy"><img src="assets/day-cream-mockup.jpg" alt="Everyday Day Cream mockup" loading="lazy"><img src="assets/night-cream-mockup.jpg" alt="Everyday Night Cream mockup" loading="lazy"><img src="assets/sunscreen-mockup.jpg" alt="Everyday Sunscreen mockup" loading="lazy"></div>
+
+<div id="social" class="gallery-title">02 — Social Media / Carousel</div>
+<div class="gallery"><img src="assets/social-01.jpg" alt="Everyday social media carousel slide 1" loading="lazy"><img src="assets/social-02.jpg" alt="Everyday social media carousel slide 2" loading="lazy"><img src="assets/social-03.jpg" alt="Everyday social media carousel slide 3" loading="lazy"><img src="assets/social-04.jpg" alt="Everyday social media carousel slide 4" loading="lazy"></div>
+
+<div id="standee" class="gallery-title">03 — Retail / Standee</div>
+<div class="gallery"><img src="assets/standee-01.jpg" alt="Everyday skincare retail standee" loading="lazy"></div>
+
+<div id="ooh" class="gallery-title">04 — OOH / 2 Hoardings</div>
+<div class="gallery"><img src="assets/hoarding-01.jpg" alt="Everyday skincare billboard in mall" loading="lazy"><img src="assets/hoarding-02.jpg" alt="Everyday skincare billboard at night" loading="lazy"></div>
+</div>
+</div></section>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap"><span>© 2026 VASU PAL</span><span><a href="mailto:vasupal014@gmail.com">vasupal014@gmail.com</a></span><span>ALIVAA HOTELS · DISHA IAF · KIDDO · EVERYDAY</span><span>THANK YOU FOR VISITING.</span></div></footer>
+<script>
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+</script>
+</body></html>
